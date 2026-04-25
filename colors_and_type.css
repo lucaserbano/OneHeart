@@ -1,0 +1,210 @@
+/* ============================================================
+   OneHeart Design System — Colors & Typography
+   ============================================================ */
+
+/* ── Google Fonts (Lato for body text) ── */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* ── Galano Grotesque — brand display font ── */
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueThin.woff2') format('woff2'); font-weight:100; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueThinItalic.woff2') format('woff2'); font-weight:100; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueExtraLight.woff2') format('woff2'); font-weight:200; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueExtraLightItalic.woff2') format('woff2'); font-weight:200; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueLight.woff2') format('woff2'); font-weight:300; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueLightItalic.woff2') format('woff2'); font-weight:300; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueRegular.woff2') format('woff2'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueItalic.woff2') format('woff2'); font-weight:400; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueMedium.woff2') format('woff2'); font-weight:500; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueMediumItalic.woff2') format('woff2'); font-weight:500; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueSemiBold.woff2') format('woff2'); font-weight:600; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueSemiBoldItalic.woff2') format('woff2'); font-weight:600; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueBold.woff2') format('woff2'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueBoldItalic.woff2') format('woff2'); font-weight:700; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueExtraBold.woff2') format('woff2'); font-weight:800; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueExtraBoldItalic.woff2') format('woff2'); font-weight:800; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueHeavy.woff2') format('woff2'); font-weight:900; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueHeavyItalic.woff2') format('woff2'); font-weight:900; font-style:italic; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueBlack.woff2') format('woff2'); font-weight:950; font-style:normal; }
+@font-face { font-family:'Galano Grotesque'; src:url('fonts/GalanoGrotesqueBlackItalic.woff2') format('woff2'); font-weight:950; font-style:italic; }
+
+/* ── Galano Grotesque Alt — alternate character set ── */
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltThin.woff2') format('woff2'); font-weight:100; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltThinItalic.woff2') format('woff2'); font-weight:100; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltExtraLight.woff2') format('woff2'); font-weight:200; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltExtraLightItalic.woff2') format('woff2'); font-weight:200; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltLight.woff2') format('woff2'); font-weight:300; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltLightItalic.woff2') format('woff2'); font-weight:300; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltRegular.woff2') format('woff2'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltItalic.woff2') format('woff2'); font-weight:400; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltMedium.woff2') format('woff2'); font-weight:500; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltMediumItalic.woff2') format('woff2'); font-weight:500; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltSemiBold.woff2') format('woff2'); font-weight:600; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltSemiBoldItalic.woff2') format('woff2'); font-weight:600; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltBold.woff2') format('woff2'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltBoldItalic.woff2') format('woff2'); font-weight:700; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltExtraBold.woff2') format('woff2'); font-weight:800; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltExtraBoldItalic.woff2') format('woff2'); font-weight:800; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltHeavy.woff2') format('woff2'); font-weight:900; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltHeavyItalic.woff2') format('woff2'); font-weight:900; font-style:italic; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltBlack.woff2') format('woff2'); font-weight:950; font-style:normal; }
+@font-face { font-family:'Galano Grotesque Alt'; src:url('fonts/GalanoGrotesqueAltBlackItalic.woff2') format('woff2'); font-weight:950; font-style:italic; }
+
+/* ── Base Color Palette ── */
+:root {
+  /* Primary */
+  --color-navy:        #36498d;   /* PANTONE 288 C 82% — main blue */
+  --color-navy-dark:   #2a3870;   /* darker navy for hover/depth */
+  --color-navy-light:  #4a5fa8;   /* lighter navy tint */
+
+  /* Gradient accent colors */
+  --color-crimson:     #9b374f;   /* PANTONE 7637C — mid gradient */
+  --color-coral:       #e6434e;   /* PANTONE 710C — bright red top */
+  --color-plum:        #471940;   /* PANTONE 511C — deep purple accent */
+
+  /* Neutral */
+  --color-white:       #ffffff;
+  --color-gray:        #7f7f7f;   /* PANTONE Cool Gray 8C */
+  --color-gray-light:  #f4f5f8;
+  --color-gray-mid:    #d0d3dc;
+  --color-gray-dark:   #3a3a3a;
+
+  /* Brand gradient (symbol: coral top → navy bottom) */
+  --gradient-brand:    linear-gradient(160deg, #e6434e 0%, #9b374f 40%, #36498d 100%);
+  --gradient-brand-h:  linear-gradient(90deg,  #e6434e 0%, #9b374f 50%, #36498d 100%);
+  --gradient-brand-60: linear-gradient(60deg, #36498d 19%, #e6434e 100%); /* design.md §2.1 — hero, CTA final, botão primário */
+  --gradient-dark-bg:  linear-gradient(160deg, #2a3870 0%, #36498d 100%);
+
+  /* ── Semantic Colors ── */
+  --bg-primary:        var(--color-navy);
+  --bg-secondary:      var(--color-white);
+  --bg-dark:           #1e2a5e;
+  --bg-card-dark:      rgba(255,255,255,0.06);
+  --bg-card-light:     #ffffff;
+
+  --fg-on-dark:        var(--color-white);
+  --fg-on-light:       var(--color-navy);
+  --fg-muted-dark:     rgba(255,255,255,0.65);
+  --fg-muted-light:    var(--color-gray);
+  --fg-accent:         var(--color-coral);
+
+  --border-dark:       rgba(255,255,255,0.12);
+  --border-light:      var(--color-gray-mid);
+
+  /* ── Typography ── */
+  --font-display:      'Galano Grotesque', sans-serif;
+  --font-display-alt:  'Galano Grotesque Alt', sans-serif; /* alternate glyphs variant */
+  --font-body:         'Lato', sans-serif;     /* body / support text */
+  --font-mono:         'Courier New', monospace;
+
+  /* Scale */
+  --text-xs:    0.75rem;   /*  12px */
+  --text-sm:    0.875rem;  /*  14px */
+  --text-base:  1rem;      /*  16px */
+  --text-md:    1.125rem;  /*  18px */
+  --text-lg:    1.375rem;  /*  22px */
+  --text-xl:    1.75rem;   /*  28px */
+  --text-2xl:   2.25rem;   /*  36px */
+  --text-3xl:   3rem;      /*  48px */
+  --text-4xl:   4rem;      /*  64px */
+
+  /* Weight */
+  --weight-light:      300;
+  --weight-regular:    400;
+  --weight-medium:     500;
+  --weight-semibold:   600;
+  --weight-bold:       700;
+  --weight-extrabold:  800;
+  --weight-heavy:      900;
+
+  /* Line heights */
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.55;
+  --leading-relaxed: 1.75;
+
+  /* ── Spacing ── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10: 128px;
+
+  /* ── Radius ── */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 2px 8px rgba(54,73,141,0.12);
+  --shadow-md:  0 6px 24px rgba(54,73,141,0.18);
+  --shadow-lg:  0 16px 48px rgba(54,73,141,0.24);
+  --shadow-glow: 0 0 40px rgba(230,67,78,0.25);
+}
+
+/* ── Semantic Element Defaults ── */
+h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-heavy);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.015em;
+}
+h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+}
+h4 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+}
+h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+}
+p {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-muted-light);
+}
+.label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.tagline {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}

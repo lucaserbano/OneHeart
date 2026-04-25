@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneHeart — Cardiologia Intervencionista · Curitiba – PR</title>
+<link rel="icon" type="image/png" href="./assets/selo-degrade.webp">
+<link rel="stylesheet" href="./colors_and_type.css">
+<style>
+  /* Re-declare font-face with paths relative to this file */
+  @font-face { font-family:'Galano Grotesque'; src:url('./fonts/GalanoGrotesqueLight.woff2') format('woff2'); font-weight:300; font-style:normal; }
+  @font-face { font-family:'Galano Grotesque'; src:url('./fonts/GalanoGrotesqueRegular.woff2') format('woff2'); font-weight:400; font-style:normal; }
+  @font-face { font-family:'Galano Grotesque'; src:url('./fonts/GalanoGrotesqueMedium.woff2') format('woff2'); font-weight:500; font-style:normal; }
+  @font-face { font-family:'Galano Grotesque'; src:url('./fonts/GalanoGrotesqueSemiBold.woff2') format('woff2'); font-weight:600; font-style:normal; }
+  @font-face { font-family:'Galano Grotesque'; src:url('./fonts/GalanoGrotesqueBold.woff2') format('woff2'); font-weight:700; font-style:normal; }
+  @font-face { font-family:'Galano Grotesque'; src:url('./fonts/GalanoGrotesqueExtraBold.woff2') format('woff2'); font-weight:800; font-style:normal; }
+  @font-face { font-family:'Galano Grotesque'; src:url('./fonts/GalanoGrotesqueHeavy.woff2') format('woff2'); font-weight:900; font-style:normal; }
+  @font-face { font-family:'Galano Grotesque'; src:url('./fonts/GalanoGrotesqueBlack.woff2') format('woff2'); font-weight:950; font-style:normal; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body, #root { height: 100%; }
+  body { font-family: 'Galano Grotesque', system-ui, sans-serif; background: #ffffff; color: #1e2a5e; -webkit-font-smoothing: antialiased; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="hooks.jsx"></script>
+<script type="text/babel" src="Navbar.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="Credenciais.jsx"></script>
+<script type="text/babel" src="Abordagem.jsx"></script>
+<script type="text/babel" src="Cuidados.jsx"></script>
+<script type="text/babel" src="Doctors.jsx"></script>
+<script type="text/babel" src="Publicacoes.jsx"></script>
+<script type="text/babel" src="CtaFinal.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel">
+const { useState } = React;
+
+function App() {
+  const [screen, setScreen] = useState('home');
+
+  return (
+    <div style={{minHeight:'100vh', display:'flex', flexDirection:'column'}}>
+      <OneHeartNavbar screen={screen} setScreen={setScreen} />
+      {screen === 'home' && <>
+        <OneHeartHero setScreen={setScreen} />
+        <OneHeartCredenciais />
+        <OneHeartAbordagem setScreen={setScreen} />
+        <OneHeartCuidados />
+        <OneHeartDoctors setScreen={setScreen} />
+        <OneHeartPublicacoes />
+        <OneHeartCtaFinal setScreen={setScreen} />
+      </>}
+      {screen === 'doctors' && <OneHeartDoctorsPage />}
+      {screen === 'contact' && <OneHeartContact />}
+      <OneHeartFooter setScreen={setScreen} />
+    </div>
+  );
+}
+
+function OneHeartContact() {
+  const [sent, setSent] = useState(false);
+  const s = {
+    page: { background: '#f4f5f8', padding: '80px 24px', flex: 1 },
+    inner: { maxWidth: 620, margin: '0 auto' },
+    tag: { fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#e6434e', marginBottom: 10 },
+    title: { fontSize: 36, fontWeight: 900, color: '#1e2a5e', lineHeight: 1.15, marginBottom: 12 },
+    sub: { fontSize: 16, color: '#7f7f7f', fontWeight: 300, lineHeight: 1.6, marginBottom: 36 },
+    card: { background: '#fff', borderRadius: 20, padding: 36, boxShadow: '0 8px 32px rgba(54,73,141,0.12)' },
+    row: { display: 'flex', gap: 16, marginBottom: 16 },
+    field: { display: 'flex', flexDirection: 'column', flex: 1 },
+    label: { fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#36498d', marginBottom: 6 },
+    input: { fontFamily: 'inherit', fontSize: 15, fontWeight: 400, padding: '11px 14px', border: '1.5px solid #d0d3dc', borderRadius: 10, color: '#1e2a5e', outline: 'none' },
+    btn: { width: '100%', background: 'linear-gradient(60deg, #36498d 19%, #e6434e 100%)', color: '#fff', fontFamily: 'inherit', fontWeight: 700, fontSize: 15, padding: '14px', borderRadius: 9999, border: 'none', cursor: 'pointer', marginTop: 8 },
+    success: { textAlign: 'center', padding: 40 },
+    successTitle: { fontSize: 24, fontWeight: 800, color: '#1e2a5e', marginBottom: 8 },
+    successSub: { fontSize: 14, color: '#7f7f7f' },
+  };
+  if (sent) return (
+    <div style={s.page}><div style={s.inner}><div style={{...s.card,...s.success}}>
+      <div style={s.successTitle}>Mensagem enviada.</div>
+      <div style={s.successSub}>Em breve nossa equipe entrará em contato.</div>
+    </div></div></div>
+  );
+  return (
+    <div style={s.page}><div style={s.inner}>
+      <div style={s.tag}>Fale Conosco</div>
+      <div style={s.title}>Agende sua avaliação</div>
+      <div style={s.sub}>Preencha o formulário e nossa equipe entrará em contato para confirmar seu agendamento.</div>
+      <div style={s.card}>
+        <div style={s.row}>
+          <div style={s.field}><div style={s.label}>Nome</div><input style={s.input} placeholder="Seu nome completo" /></div>
+          <div style={s.field}><div style={s.label}>Telefone</div><input style={s.input} placeholder="(41) 99999-9999" /></div>
+        </div>
+        <div style={{...s.field, marginBottom: 16}}><div style={s.label}>E-mail</div><input style={s.input} placeholder="seu@email.com" /></div>
+        <div style={{...s.field, marginBottom: 16}}><div style={s.label}>Especialista desejado</div>
+          <select style={s.input}>
+            <option>Dra. Deborah Nercolini</option>
+            <option>Dr. Pedro Nicz</option>
+            <option>Dr. Wilton Gomes</option>
+            <option>Indiferente</option>
+          </select>
+        </div>
+        <div style={{...s.field, marginBottom: 8}}><div style={s.label}>Mensagem</div>
+          <textarea style={{...s.input, resize:'vertical', fontFamily: 'inherit'}} rows={4} placeholder="Descreva brevemente o motivo da consulta..."></textarea>
+        </div>
+        <button style={s.btn} onClick={() => setSent(true)}>Enviar solicitação</button>
+      </div>
+    </div></div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Editor / OS noise
+.idea/
+.vscode/
+*.swp
+*~
+
+# Claude Code local config
+.claude/
+
+# Source-of-truth originals (heavy, not needed at runtime)
+_originals/
+ID visual - originais/
+Fotos - médicos/
+Galano/
+Conteúdo - apify/
+
+# Pre-existing UI kit (now flattened to root)
+OneHeart Design System/
+
+# Local plan/state files
+*.log

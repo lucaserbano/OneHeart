@@ -358,7 +358,8 @@ button { font: inherit; cursor: pointer; }
   width: 100%;
   height: clamp(280px, 46vh, 420px);
 }
-.hero-photo img {
+.hero-photo img,
+.hero-photo video {
   width: 100%; height: 100%;
   object-fit: cover; object-position: 50% 24%;
   filter: saturate(.72) contrast(1.03) brightness(1.02);
@@ -384,7 +385,8 @@ button { font: inherit; cursor: pointer; }
     top: 84px; right: 0; bottom: 0;
     width: 52%; height: auto;
   }
-  .hero-photo img { object-position: 50% 30%; }
+  .hero-photo img,
+  .hero-photo video { object-position: 50% 30%; }
   /* esfumado — dissolve para a esquerda, transição longa e suave para o fundo */
   .hero-photo::after {
     background: linear-gradient(90deg,

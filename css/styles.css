@@ -808,11 +808,230 @@ button { font: inherit; cursor: pointer; }
 .js-reveal .reveal[data-delay="2"] { transition-delay: .16s; }
 .js-reveal .reveal[data-delay="3"] { transition-delay: .24s; }
 
+/* ============================================================
+   Página Sobre
+   ============================================================ */
+
+/* ── Hero secundário ── */
+.subhero {
+  position: relative;
+  padding: 132px 0 clamp(48px, 7vw, 80px);
+  overflow: hidden;
+  background:
+    radial-gradient(900px 480px at 88% -10%, rgba(230,67,78,.06), transparent 60%),
+    radial-gradient(1000px 620px at -10% 120%, rgba(54,73,141,.09), transparent 60%),
+    var(--white);
+}
+.subhero::before {
+  content: ""; position: absolute; right: -60px; top: 50%;
+  width: min(46vw, 460px); aspect-ratio: 387 / 589;
+  transform: translateY(-46%) rotate(4deg);
+  background: url('../assets/img/simbolo-colorido.webp') center / contain no-repeat;
+  opacity: .06; pointer-events: none; z-index: 0;
+}
+@media (max-width: 767px) { .subhero::before { display: none; } }
+.subhero .container { position: relative; z-index: 1; }
+.subhero-copy { max-width: 760px; }
+.subhero h1 {
+  margin-top: 20px;
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 800; line-height: 1.06; letter-spacing: -.02em;
+  color: var(--blue-deep); text-wrap: balance;
+}
+.subhero h1 .grad {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.subhero .sub {
+  margin-top: 20px; max-width: 620px;
+  font-size: clamp(16px, 1.5vw, 19px); color: var(--gray);
+}
+.br-lg { display: none; }
+@media (min-width: 1024px) { .br-lg { display: inline; } }
+
+/* ── Nossa história ── */
+.historia {
+  position: relative; overflow: hidden;
+  padding: clamp(64px, 8vw, 100px) 0;
+  background: var(--gradient-brand);
+  color: #fff;
+}
+/* textura de granulado — mesma assinatura da seção CTA */
+.historia::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  opacity: .5; mix-blend-mode: soft-light;
+}
+.historia .container { position: relative; z-index: 1; }
+.historia .section-head h2 { color: #fff; }
+.historia-grid {
+  display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
+}
+@media (min-width: 1024px) {
+  .historia-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 64px; }
+}
+.historia p.body { margin-top: 18px; font-size: 17px; max-width: 60ch; color: rgba(255,255,255,.92); }
+.historia p.body + p.body { margin-top: 14px; }
+.historia strong { color: #fff; font-weight: 600; }
+
+.ref-chips { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
+@media (min-width: 1024px) { .ref-chips { flex-wrap: nowrap; margin-top: 40px; } }
+.ref-chips li {
+  white-space: nowrap;
+  font-size: 13px; font-weight: 600; color: var(--blue);
+  background: #fff; border: 0;
+  padding: 8px 14px; border-radius: var(--radius-pill);
+  box-shadow: 0 2px 10px rgba(34,48,95,.18);
+}
+
+.historia-aside {
+  position: relative; overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.24);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  color: #fff;
+  padding: clamp(28px, 4vw, 40px);
+  display: flex; flex-direction: column; gap: 4px;
+  min-height: 240px; justify-content: center;
+  box-shadow: 0 20px 56px rgba(34,48,95,.22);
+}
+.historia-aside::after {
+  content: ""; position: absolute; right: -40px; bottom: -50px;
+  width: 200px; height: 288px;
+  background: url('../assets/img/simbolo-branco.webp') center / contain no-repeat;
+  opacity: .16; transform: rotate(-8deg); pointer-events: none;
+}
+.historia-aside .ano {
+  font-size: clamp(52px, 7vw, 76px); font-weight: 800; line-height: 1; letter-spacing: -.02em;
+}
+.historia-aside .ano-label {
+  font-size: 13px; font-weight: 500; letter-spacing: .16em;
+  text-transform: uppercase; color: rgba(255,255,255,.82);
+}
+.historia-aside .aside-note {
+  position: relative; margin-top: 16px;
+  font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.9);
+}
+
+/* ── HeartTeam (menção) ── */
+.ht-band { background: var(--blue-10); padding: clamp(40px, 5vw, 56px) 0; }
+.ht-band .container {
+  display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
+}
+@media (min-width: 900px) {
+  .ht-band .container { flex-direction: row; align-items: center; gap: 28px; }
+}
+.ht-band > .container > svg { color: var(--blue); flex: none; }
+.ht-band-text { flex: 1; }
+.ht-band-text h2 { font-size: 20px; font-weight: 700; color: var(--blue-deep); }
+.ht-band-text p { margin-top: 6px; font-size: 15.5px; color: var(--gray-60); max-width: 68ch; }
+.ht-band .link-arrow { flex: none; }
+
+/* ── Equipe e formação ── */
+.equipe-sobre {
+  padding: clamp(72px, 9vw, 112px) 0;
+  background:
+    linear-gradient(rgba(255,255,255,.94), rgba(255,255,255,.94)),
+    url('../assets/img/pattern-branco.webp') center / 720px auto,
+    var(--blue-06);
+}
+.equipe-foto {
+  margin: 44px 0 0; position: relative; overflow: hidden;
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 3;
+}
+@media (min-width: 768px) { .equipe-foto { aspect-ratio: 16 / 9; } }
+.equipe-foto img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 28%;
+  filter: saturate(.9) contrast(1.02);
+}
+.equipe-foto::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(34,48,95,.22) 0%, transparent 40%);
+}
+.medicos {
+  margin-top: 28px;
+  display: grid; grid-template-columns: 1fr; gap: 20px;
+}
+@media (min-width: 768px) { .medicos { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+.medico {
+  background: var(--white);
+  border: 1px solid var(--gray-20);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  scroll-margin-top: 100px;
+}
+.medico h3 { font-size: 18.5px; font-weight: 700; color: var(--blue-deep); line-height: 1.25; }
+.medico .titulo { margin-top: 6px; font-size: 14px; font-weight: 500; color: var(--gray); }
+.medico .cred { margin-top: 2px; font-size: 13.5px; font-weight: 500; color: var(--blue); }
+.formacao { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.formacao li {
+  position: relative; padding-left: 20px;
+  font-size: 14.5px; line-height: 1.45; color: var(--gray-60);
+}
+.formacao li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gradient-brand);
+}
+
+/* ── Local de atendimento ── */
+.local { padding: clamp(72px, 9vw, 112px) 0; }
+.local .container {
+  display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
+}
+@media (min-width: 1024px) {
+  .local .container { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; }
+}
+.local-info p.body { margin-top: 18px; font-size: 17px; max-width: 46ch; }
+.local-info strong { color: var(--blue-deep); font-weight: 600; }
+.local-list { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+.local-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; color: var(--gray-60); }
+.local-list svg { flex: none; margin-top: 2px; color: var(--blue); }
+.local-list a { color: var(--gray-60); text-decoration: none; }
+.local-list a:hover { color: var(--blue); }
+.local-info .link-arrow { margin-top: 26px; }
+
+.map-embed {
+  position: relative; overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-20);
+  aspect-ratio: 16 / 11;
+}
+@media (min-width: 1024px) { .map-embed { aspect-ratio: 16 / 12; } }
+.map-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ── Instagram ── */
+.insta { padding: clamp(64px, 8vw, 100px) 0 clamp(80px, 10vw, 120px); background: var(--blue-06); }
+.insta-embed { margin-top: 40px; display: grid; place-items: center; }
+.insta-fallback {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  text-align: center; text-decoration: none;
+  background: var(--white); border: 1px solid var(--gray-20);
+  border-radius: var(--radius-lg);
+  padding: clamp(36px, 5vw, 56px) clamp(28px, 6vw, 72px);
+  box-shadow: var(--shadow-sm); color: var(--blue-deep);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  max-width: 460px; width: 100%;
+}
+.insta-fallback:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.insta-fallback svg { color: var(--burgundy); }
+.insta-handle { font-size: 22px; font-weight: 700; letter-spacing: -.01em; }
+.insta-cta {
+  margin-top: 4px; font-size: 14px; font-weight: 600; color: #fff;
+  background: var(--gradient-brand); padding: 11px 22px; border-radius: var(--radius-pill);
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-watermark { animation: none; opacity: var(--wm-o); transform: translate(-50%, -50%); }
   .btn, .card-proc, .card-medico, .card-pub, .card-medico .foto img,
-  .drawer-panel, .drawer-scrim, .whats-float { transition: none; }
+  .drawer-panel, .drawer-scrim, .whats-float,
+  .medico, .insta-fallback { transition: none; }
 }

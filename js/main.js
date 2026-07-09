@@ -64,6 +64,70 @@
     revealAll();
   }
 
+  /* ── Filtro de publicações por categoria ── */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var postCards = document.querySelectorAll('.blog-posts .card-pub');
+  if (filterBtns.length && postCards.length) {
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var cat = btn.getAttribute('data-filter');
+        filterBtns.forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+        postCards.forEach(function (card) {
+          var show = cat === 'all' || card.getAttribute('data-category') === cat;
+          card.classList.toggle('is-hidden', !show);
+        });
+      });
+    });
+  }
+
+  /* ── Sumário do artigo (scroll-spy) ── */
+  var tocLinks = document.querySelectorAll('.article-toc a');
+  var artSections = document.querySelectorAll('.article-body section[id]');
+  if (tocLinks.length && artSections.length && 'IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          tocLinks.forEach(function (a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
+    artSections.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* ── Compartilhar artigo ── */
+  var share = document.querySelector('.article-share');
+  if (share) {
+    var url = window.location.href;
+    var title = document.title.replace(/\s*[—·].*$/, '').trim() || document.title;
+    var wa = share.querySelector('[data-share="whatsapp"]');
+    var mail = share.querySelector('[data-share="email"]');
+    var copy = share.querySelector('[data-share="copy"]');
+    if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(title + ' — ' + url);
+    if (mail) mail.href = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(url);
+    if (copy) copy.addEventListener('click', function () {
+      var label = copy.querySelector('.share-label');
+      function flash(msg) {
+        if (!label) return;
+        var old = label.getAttribute('data-label') || label.textContent;
+        label.setAttribute('data-label', old);
+        label.textContent = msg;
+        setTimeout(function () { label.textContent = old; }, 1800);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () { flash('Link copiado!'); }, function () { flash('Copie da barra'); });
+      } else {
+        flash('Copie da barra');
+      }
+    });
+  }
+
   /* ── Ano no footer ── */
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());

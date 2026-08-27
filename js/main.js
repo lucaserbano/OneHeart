@@ -128,6 +128,17 @@
     });
   }
 
+  /* ── Vídeos ilustrativos: respeita a preferência por menos movimento ── */
+  var figVideos = document.querySelectorAll('video[data-figure]');
+  if (reduceMotion && figVideos.length) {
+    figVideos.forEach(function (v) {
+      v.removeAttribute('autoplay');
+      v.removeAttribute('loop');
+      v.setAttribute('controls', '');
+      v.pause();
+    });
+  }
+
   /* ── Ano no footer ── */
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
